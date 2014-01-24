@@ -3,6 +3,10 @@ NkuRails::Application.routes.draw do
   
   root to: "posts#index"
   
+  post GET    /posts/:id(.:format)      posts#show
+  #posts GET    /posts(.:format)          posts#index
+  DELETE /posts/:id(.:format)      posts#destroy
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
