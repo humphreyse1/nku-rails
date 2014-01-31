@@ -1,1 +1,12 @@
-#HTML operations go in view (?)
+<p>
+  Title: 
+  <%= @student.title %>
+</p>
+
+<p>
+  Text: 
+  <%= @student.text %>
+</p>
+
+<%= link_to 'Back', students_path %>
+| <%= link_to 'Edit', edit_student_path(@student) %>
