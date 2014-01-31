@@ -3,7 +3,6 @@ NkuRails::Application.routes.draw do
   resources :students
   
   root "students"
-  #root to: "students"
   
   #post GET    /posts/:id(.:format)      posts#show
   #posts GET    /posts(.:format)          posts#index

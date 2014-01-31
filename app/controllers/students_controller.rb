@@ -4,8 +4,8 @@ class PostsController < ApplicationController
   end
   
   def create
-    @student= Student.new(params[:post]
-      flash[:notice]= "You have successfully created #{name}."
+    @student= Student.new(params[:post])
+    flash[:notice]= "You have successfully created #{name}."
     redirect_to root_url
   end
   
