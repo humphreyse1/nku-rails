@@ -2,7 +2,8 @@ NkuRails::Application.routes.draw do
   #resources :posts
   resources :students
   
-  root to: "students#index"
+  root "students"
+  #root to: "students"
   
   #post GET    /posts/:id(.:format)      posts#show
   #posts GET    /posts(.:format)          posts#index
