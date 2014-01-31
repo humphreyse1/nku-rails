@@ -3,5 +3,15 @@ class PostsController < ApplicationController
     @student= Student.new
   end
   
-  #methods go in controllers (?)
+  def create
+    
+    flash[:notice]= "You have successfully created #{name}."
+    redirect_to root_url
+  end
+  
+  def edit
+    
+    flash[:notice]= "You have successfully edited #{name}."
+    redirect_to root_url
+  end
 end
