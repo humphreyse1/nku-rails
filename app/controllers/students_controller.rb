@@ -5,13 +5,13 @@ class StudentsController < ApplicationController
   
   def create
     @student= Student.new(params[:post])
-    flash[:notice]= "You have successfully created #{name}."
+    flash[:notice]= "You have successfully created #{@student.name}."
     redirect_to root_url
   end
   
   def edit
     @student= Student.find(params[:id])
-    flash[:notice]= "You have successfully edited #{name}."
+    flash[:notice]= "You have successfully edited #{@student.name}."
     redirect_to root_url
   end
   
