@@ -3,5 +3,5 @@ class PostsController < ApplicationController
     @student= Student.new
   end
   
-  
+  #methods go in controllers (?)
 end
