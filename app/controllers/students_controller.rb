@@ -16,7 +16,7 @@ class StudentsController < ApplicationController
   end
   
   #get gravatar image
-  if @student.image= nil
+  if @student.image==nil
     @student.image= "http://www.gravatar.com/avatar"
     if @student.email != nil
       require 'digest/md5'
