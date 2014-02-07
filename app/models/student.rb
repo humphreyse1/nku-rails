@@ -1,5 +1,3 @@
-class Post < ActiveRecord::Base
-  #def avatar
-  #  Avatar.from_student(self)
-  #end
+class Student < ActiveRecord::Base
+  has_secure_password
 end

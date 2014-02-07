@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
   
   def create
     @student= Student.create!(student_params)
+    session[:id]= @student.id
     flash[:notice]= "You have successfully created #{@student.name}."
     redirect_to students_path
   end
