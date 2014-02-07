@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140207170832) do
+ActiveRecord::Schema.define(version: 20140207214957) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20140207170832) do
     t.string "nickname"
     t.string "email"
     t.string "image_url"
-    t.string "password"
-    t.string "passwordConfirm"
+    t.string "password_digest"
   end
+
 end

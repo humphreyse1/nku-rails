@@ -27,9 +27,9 @@
   
   <div class="form-group">
     <%= f.label :passwordConfirm, 'Confirm Password: ' %>
-    <%= f.text_field :passwordConfirm
+    <%= f.text_field :password_confirmation %>
   
-  <%= f.submit submit_copy, class: 'btn btn-primary' %>
+  <%= f.submit %>
     &nbsp;or
     <%= link_to 'Cancel', students_path %>
   <% end %>

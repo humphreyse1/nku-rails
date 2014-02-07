@@ -23,3 +23,4 @@ group :test do
 end
 
 gem 'bcrypt-ruby'
+gem 'factory_girl_rails'
