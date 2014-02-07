@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
   end
   
   def create
-    @student= Student.new(params[:post])
+    @student= Student.create!(student_params)
     flash[:notice]= "You have successfully created #{@student.name}."
     redirect_to students_path
   end
