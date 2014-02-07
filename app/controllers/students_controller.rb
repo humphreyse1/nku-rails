@@ -16,7 +16,7 @@ class StudentsController < ApplicationController
   def update
     @student= Student.find(params[:id])
     @student.update_attributes!(student_params)
-    redirect_to students_path, notice: "Successfully updated #{student.name}"
+    redirect_to students_path, notice: "Successfully updated #{@student.name}"
   end
   
   #get gravatar image
