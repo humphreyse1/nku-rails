@@ -6,22 +6,37 @@ class StudentsController < ApplicationController
   def create
     @student= Student.new(params[:post])
     flash[:notice]= "You have successfully created #{@student.name}."
-    redirect_to root_url
+    redirect_to students_path
   end
   
   def edit
     @student= Student.find(params[:id])
-    flash[:notice]= "You have successfully edited #{@student.name}."
-    redirect_to root_url
+  end
+  
+  def update
+    @student= Student.find(params[:id])
+    @student.update_attributes!(student_params)
+    redirect_to students_path, notice: "Successfully updated #{student.name}"
   end
   
   #get gravatar image
-  if @student.image==nil
-    @student.image= "http://www.gravatar.com/avatar"
-    if @student.email != nil
-      require 'digest/md5'
-      hash= Digest::MD5.hexdigest(@student.email)
-      @student.image= "http://www.gravatar.com/avatar/#{hash}"
+  def getImage
+    if @student.image==nil
+      @student.image= "http://www.gravatar.com/avatar"
+      if @student.email != nil
+        require 'digest/md5'
+        hash= Digest::MD5.hexdigest(@student.email)
+        @student.image= "http://www.gravatar.com/avatar/#{hash}"
+      end
     end
+  end
+  
+  def index
+    @students= Student.all
+  end
+  
+  private
+  def student_params
+    params.require(:student).permit!
   end
 end
