@@ -25,5 +25,7 @@ ActiveRecord::Schema.define(version: 20140207170832) do
     t.string "nickname"
     t.string "email"
     t.string "image_url"
+    t.string "password"
+    t.string "passwordConfirm"
   end
 end
