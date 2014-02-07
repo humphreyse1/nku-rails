@@ -20,4 +20,10 @@ ActiveRecord::Schema.define(version: 20140124174031) do
     t.datetime "updated_at"
   end
 
+  create_table "students", force: true do |t|
+    t.string "name"
+    t.string "nickname"
+    t.string "email"
+    t.string "image_url"
+  end
 end
