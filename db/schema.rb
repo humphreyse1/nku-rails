@@ -31,5 +31,4 @@ ActiveRecord::Schema.define(version: 20140207223120) do
     t.string "image_url"
     t.string "password_digest"
   end
-
 end
