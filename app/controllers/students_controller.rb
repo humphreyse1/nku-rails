@@ -7,11 +7,11 @@ class StudentsController < ApplicationController
     @student= Student.create!(student_params)
     session[:id]= @student.id
     flash[:notice]= "You have successfully created #{@student.name}."
-    redirect_to students_path
+    redirect_to students_path, notice: "Hi, #{@student.name}."
   end
   
   def edit
-    @student= Student.find(params[:id])
+    @student= current_student
   end
   
   def update
