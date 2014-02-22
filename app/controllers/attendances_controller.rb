@@ -19,4 +19,11 @@ class AttendancesController < ApplicationController
     end
   end
   
+  def show
+    @attendance= Attendance.find(params[:id])
+  end
   
+  def index
+    @attendances= Attendance.all
+  end
+end
