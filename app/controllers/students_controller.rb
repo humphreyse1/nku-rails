@@ -19,7 +19,7 @@ class StudentsController < ApplicationController
   end
 
   def index
-    #@current_date= params[:date] || Date.today
+    @current_date= params[:date] || Date.today
     @students= Student.all
     @seat1= Student.in_seat("1", @current_date)
     #2-4

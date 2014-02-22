@@ -1,0 +1,17 @@
+<h1>Attendances as of <%= Date.today %></h1>
+<table cellpadding="15px">
+  <tr>
+    <td>Name</td>
+    <td>Date</td>
+    <td>Seat</td>
+  </tr>
+  <%= @current_student= current_student %>
+  <%= @attendances.each do |a| %>
+    <%= if @current_student && a.student_id==@current_student.id %>
+    <tr>
+      <td><%= @current_student.name %></td>
+      <td><%= a.attended_on %></td>
+      <td><%= a.seat %></td>
+    </tr>
+    <%= end %>
+  <%= end %>
