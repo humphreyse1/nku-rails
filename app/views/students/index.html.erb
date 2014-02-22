@@ -1,15 +1,82 @@
 <div class="page-header">
   <h1>Students</h1>
+  <%= form_tag({:controller => "students"}, :method => :get) %>
+  <%= date_field_tag(:date, @current_date) %>
+  <%= submit_tag %>
 </div>
 
-<% @students.each do |student| %>
-  <div id="<%=dom_id(student)%>" class="list-item">
-    <div class="avatar pull-left" style='background-image: url(<%= student.avatar %>)'></div>
-
-    <div class="info-block">
-      <h4><%= student.name %></h4>
-      <p><em>(<%= student.nickname %>)</em></p>
-      <p><%= student.email %></p>
+<table>
+  <tr>
+    <% @students.each do |student| %>
+      <div id="<%=dom_id(student)%>" class="list-item">
+      <div class="avatar pull-left" style='background-image: url(<%= student.avatar %>)'></div>
+        <div class="info-block">
+          <h4><%= student.name %></h4>
+          <p><em>(<%= student.nickname %>)</em></p>
+          <p><%= student.email %></p>
+        </div>
+      </div>
+    <% end %>
+  </tr>
+  
+  <tr>
+    <div style="float: right, width: 50%">
+      <h2>In Class</h2>
+      <table cellpadding="50px">
+        <tr>
+          <td>
+            <div style="float: top"><h2>Seat 1</h2></div>
+            <%= @seat1.each do |s| %>
+              <div style="float: left, display: block">
+                <h4><%= s.name %></h4>
+                <p><em>(<%= s.nickname %>)</em></p>
+                <p><%= s.email %></p>
+              </div>
+            <%= end %>
+          </td>
+          
+          <td>
+            <div style="float: top"><h2>Seat 2</h2></div>
+            <%= @seat1.each do |s| %>
+              <div style="float: right, display: block">
+                <h4><%= s.name %></h4>
+                <p><em>(<%= s.nickname %>)</em></p>
+                <p><%= s.email %></p>
+              </div>
+            <%= end %>
+          </td>
+          
+          <td>
+            <div style="float: top"><h2>Seat 3</h2></div>
+            <%= @seat1.each do |s| %>
+              <div style="float: left, display: block">
+                <h4><%= s.name %></h4>
+                <p><em>(<%= s.nickname %>)</em></p>
+                <p><%= s.email %></p>
+              </div>
+            <%= end %>
+          </td>
+          
+          <td>
+            <div style="float: top"><h2>Seat 4</h2></div>
+            <%= @seat1.each do |s| %>
+              <div style="float: right, display: block">
+                <h4><%= s.name %></h4>
+                <p><em>(<%= s.nickname %>)</em></p>
+                <p><%= s.email %></p>
+              </div>
+            <%= end %>
+          </td>
+        </table>
+      
+      <h2>Absent</h2>
+      <%= @absent.each do |a| %>
+        <div class="info-block">
+          <h4><%= a.name %></h4>
+          <p><em>(<%= a.nickname %>)</em></p>
+          <p><%= a.email %></p>
+        </div>
+      <%= end %>
     </div>
-  </div>
-<% end %>
+  </tr>
+</table>

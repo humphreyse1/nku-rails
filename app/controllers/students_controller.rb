@@ -22,7 +22,9 @@ class StudentsController < ApplicationController
     @current_date= params[:date] || Date.today
     @students= Student.all
     @seat1= Student.in_seat("1", @current_date)
-    #2-4
+    @seat2= Student.in_seat("2", @current_date)
+    @seat3= Student.in_seat("3", @current_date)
+    @seat4= Student.in_seat("4", @current_date)
     @absent= Student.absent(@current_date)
   end
 
