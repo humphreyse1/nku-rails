@@ -1,6 +1,6 @@
 class Student < ActiveRecord::Base
   has_secure_password
-  has_many :attendances, dependent: :destory
+  has_many :attendances, dependent: :destroy
   
   def avatar
     Avatar.from_student(self)
