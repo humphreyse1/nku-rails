@@ -24,7 +24,7 @@
           
           <td>
             <div style="float: top"><h2>Seat 2</h2></div>
-            <% @seat1.each do |s| %>
+            <% @seat2.each do |s| %>
               <div style="float: right, display: block">
                 <h4><%= s.name %></h4>
                 <p><em>(<%= s.nickname %>)</em></p>
@@ -35,7 +35,7 @@
           
           <td>
             <div style="float: top"><h2>Seat 3</h2></div>
-            <% @seat1.each do |s| %>
+            <% @seat3.each do |s| %>
               <div style="float: left, display: block">
                 <h4><%= s.name %></h4>
                 <p><em>(<%= s.nickname %>)</em></p>
@@ -46,7 +46,7 @@
           
           <td>
             <div style="float: top"><h2>Seat 4</h2></div>
-            <% @seat1.each do |s| %>
+            <% @seat4.each do |s| %>
               <div style="float: right, display: block">
                 <h4><%= s.name %></h4>
                 <p><em>(<%= s.nickname %>)</em></p>
@@ -66,6 +66,36 @@
       <% end %>
     </div>
   </tr>
+  
+  <html>
+    <head>
+      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+      <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Attendance', 'Total'],
+            ['Seat 1', <%= Student.count(Student.in_seat("1", @current_date).length) %>],
+            ['Seat 2', <%= Student.count(Student.in_seat("2", @current_date).size) %>],
+            ['Seat 3', <%= Student.count(Student.in_seat("3", @current_date).length) %>],
+            ['Seat 4', <%= Student.count(Student.in_seat("4", @current_date).length) %>],
+            ['Absent', <%= Student.count(Student.absent(@current_date).length) %>]
+          ]);
+
+          var options = {
+            title: 'Student Attendances'
+          };
+
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+      </script>
+    </head>
+    <body>
+      <div id="piechart" style="width: 900px; height: 500px;"></div>
+    </body>
+  </html>
   
   <tr>
     <% @students.each do |student| %>

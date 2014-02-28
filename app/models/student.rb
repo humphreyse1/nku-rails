@@ -14,4 +14,12 @@ class Student < ActiveRecord::Base
   def self.absent(pick_date)
     return Student.where.not(id: Attendance.where(attendances: {attended_on: pick_date}).collect {|a| a.student_id})
   end
+  
+  #get number of present/absent students for pie chart
+  def count(list)
+    list.each do |hash|
+      total += 1
+    end
+    return total
+  end
 end
