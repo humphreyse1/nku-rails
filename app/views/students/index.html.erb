@@ -13,57 +13,57 @@
         <tr>
           <td>
             <div style="float: top"><h2>Seat 1</h2></div>
-            <%= @seat1.each do |s| %>
+            <% @seat1.each do |s| %>
               <div style="float: left, display: block">
                 <h4><%= s.name %></h4>
                 <p><em>(<%= s.nickname %>)</em></p>
                 <p><%= s.email %></p>
               </div>
-            <%= end %>
+            <% end %>
           </td>
           
           <td>
             <div style="float: top"><h2>Seat 2</h2></div>
-            <%= @seat1.each do |s| %>
+            <% @seat1.each do |s| %>
               <div style="float: right, display: block">
                 <h4><%= s.name %></h4>
                 <p><em>(<%= s.nickname %>)</em></p>
                 <p><%= s.email %></p>
               </div>
-            <%= end %>
+            <% end %>
           </td>
           
           <td>
             <div style="float: top"><h2>Seat 3</h2></div>
-            <%= @seat1.each do |s| %>
+            <% @seat1.each do |s| %>
               <div style="float: left, display: block">
                 <h4><%= s.name %></h4>
                 <p><em>(<%= s.nickname %>)</em></p>
                 <p><%= s.email %></p>
               </div>
-            <%= end %>
+            <% end %>
           </td>
           
           <td>
             <div style="float: top"><h2>Seat 4</h2></div>
-            <%= @seat1.each do |s| %>
+            <% @seat1.each do |s| %>
               <div style="float: right, display: block">
                 <h4><%= s.name %></h4>
                 <p><em>(<%= s.nickname %>)</em></p>
                 <p><%= s.email %></p>
               </div>
-            <%= end %>
+            <% end %>
           </td>
         </table>
       
       <h2>Absent</h2>
-      <%= @absent.each do |a| %>
+      <% @absent.each do |a| %>
         <div class="info-block">
           <h4><%= a.name %></h4>
           <p><em>(<%= a.nickname %>)</em></p>
           <p><%= a.email %></p>
         </div>
-      <%= end %>
+      <% end %>
     </div>
   </tr>
   
