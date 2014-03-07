@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140207223120) do
+ActiveRecord::Schema.define(version: 20140307214150) do
+
+  create_table "assignments", force: true do |t|
+    t.integer "score"
+    t.integer "total"
+  end
 
   create_table "attendances", force: true do |t|
     t.date    "attended_on"
@@ -35,4 +40,5 @@ ActiveRecord::Schema.define(version: 20140207223120) do
     t.string "passwordConfirm"
     t.string "password_digest"
   end
+
 end
