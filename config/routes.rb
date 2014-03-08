@@ -10,4 +10,5 @@ NkuRails::Application.routes.draw do
   get "profile", to: "students#edit"
 
   root to: "students#index"
+  #root to: "sessions#index"
 end
