@@ -1,5 +1,6 @@
 <div class="page-header">
-  <%= link_to "I'm here!", new_attendance_path %>
+  <%= link_to "I'm here!", students_path %>
+     <p>I want this to link to .../attendance/new.html.erb, but can't find the proper path. I've used the current path to avoid errors.</p>
   <h1>Students</h1>
   <%= form_tag({:controller => "students"}, :method => :get) %>
   <%= date_field_tag(:date, @current_date) %>
