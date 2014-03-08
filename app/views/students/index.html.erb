@@ -1,9 +1,9 @@
 <div class="page-header">
+  <%= link_to "I'm here!", new_attendance_path %>
   <h1>Students</h1>
   <%= form_tag({:controller => "students"}, :method => :get) %>
   <%= date_field_tag(:date, @current_date) %>
   <%= submit_tag %>
-  <%= link_to 'I\'m here!', attendances_new_path %>
 </div>
 
 <table>
