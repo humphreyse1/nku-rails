@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+  require 'csv'
+  
   def new
     @student= Student.new
   end
@@ -26,6 +28,12 @@ class StudentsController < ApplicationController
     @seat3= Student.in_seat("3", @current_date)
     @seat4= Student.in_seat("4", @current_date)
     @absent= Student.absent(@current_date)
+  end
+  
+  def upload
+    StudentUploader.new(params[:file]).import
+    redirect_to students_path
+    end
   end
 
   private
