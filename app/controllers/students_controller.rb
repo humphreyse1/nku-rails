@@ -1,6 +1,4 @@
 class StudentsController < ApplicationController
-  require 'csv'
-  
   def new
     @student= Student.new
   end

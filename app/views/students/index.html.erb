@@ -78,10 +78,10 @@
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
             ['Attendance', 'Total'],
-            ['Seat 1', <%= Student.count(Student.in_seat("1", @current_date).length) %>],
-            ['Seat 2', <%= Student.count(Student.in_seat("2", @current_date).size) %>],
-            ['Seat 3', <%= Student.count(Student.in_seat("3", @current_date).length) %>],
-            ['Seat 4', <%= Student.count(Student.in_seat("4", @current_date).length) %>],
+            ['Seat 1', <%= Student.count(Student.in_seat(1, @current_date).length) %>],
+            ['Seat 2', <%= Student.count(Student.in_seat(2, @current_date).size) %>],
+            ['Seat 3', <%= Student.count(Student.in_seat(3, @current_date).length) %>],
+            ['Seat 4', <%= Student.count(Student.in_seat(4, @current_date).length) %>],
             ['Absent', <%= Student.count(Student.absent(@current_date).length) %>]
           ]);
 
